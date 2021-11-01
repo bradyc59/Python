@@ -1,0 +1,23 @@
+{% extends "test.html" %}
+
+{% block title %}
+Order Summary
+{% endblock %}
+{% block content %}
+<body>
+    <table border="1" cellpadding="5" cellspacing="5">
+    {% for item in items %}
+    <tr>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.product.price }}</td>
+        <td>{{ item.quantity }}</td>
+    </tr>
+        {% endfor %}
+    </table>
+    <p>Total price {{ items.price }}</p>
+        <form action ="." method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit">SUBMIT</button>
+</body>
+{% endblock %}

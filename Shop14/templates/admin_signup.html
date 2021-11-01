@@ -1,0 +1,13 @@
+{% extends 'test.html' %}
+
+{% block title %}
+    Admin Signup
+{% endblock %}
+
+{% block content %}
+    <form action="." method="post">
+    {%  csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit">
+    </form>
+{% endblock %}

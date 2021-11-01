@@ -1,0 +1,17 @@
+{% extends "test.html" %}
+
+{% block title %}
+{{ product_name }}
+{% endblock %}
+
+
+{% block content %}
+    {% if added %}
+        <h1>Added product</h1>
+    {% endif %}
+    <p>Product name {{ product.name }}</p>
+    <p>Product description {{ product.description }} </p>
+    <p>Product price {{ product.price }}</p>
+    <img src="{{ product.picture.url }}">
+    <a href="/addbasket/{{ product.id }}" class="btn btn-primary">Buy - {{ product.price }}
+{% endblock %}

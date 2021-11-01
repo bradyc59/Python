@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+	<link rel="images" href="images"/>
+{% endblock %}
+
+
+{% block header %}
+    <h1 class="header"> Welcome to SimmosSmarties online shopping hub! </h1>
+    <p class="subheader">The one stop shop for all your individual smartie needs.</p>
+{% endblock %}
+
+
+{% block body %}
+    {% if user.is_authenticated %}
+        <h1> Hello {{ user.username }}</h1>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+    <p class="noaccount"> Don't have an Account? </p>
+    <a href="/user_signup"><button> Register Now </button> </a>
+    <p class="businessgoal"> Our goal is to provide our customers with the ultimate Smarties experience. </br>
+We all know the feeling where you spend far too much money on a packet of smarties only to eat one from the pack because the amount of sustinance is just too great,</br>
+well we here at SimmosSmarties we agree with you and that's why we sell individual smarties from the low low price of 0.01c a piece. </br>
+Join us in our fight against Nestle and the tyrant grip they posess on the worlds greatest market the Smartie market. </br>
+Support us by ordering on our website! </p>
+
+<h5 class="smartiesforall"> Smarties For All!!! </br></br></br> </h5>
+<div class="fight-the-power">
+<img src="{% static 'imgs/fight-the-power.jpg'%}" class="img-fluid" alt="FightThePower">
+</div>
+{% endblock %}
+
+{% block footer %}
+    <br><br><br>
+<ul class="social-icons">
+    <li><a href="https://www.facebook.com/SimmosSmarties"><img src="{% static 'imgs/facebook.png' %}" alt="Facebook"/></a></li>
+    <li><a href="https://twitter.com/SimmosSmarties"><img src="{% static 'imgs/twitter.png' %}" alt="Twitter"/></a></li>
+	<li><a href="https://www.instagram.com/simmos_smarties/"><img src="{% static 'imgs/instagram.png'%}" alt="Instagram"/></a></li>
+	<li><a href="https://www.snapchat.com/add/SimmosSmarties"><img src="{% static 'imgs/snapchat.png'%}" alt="Snapchat"/></a></li>
+</ul>
+
+<h4 class="social-media-footer"> Follow us on social media with the links above </h4>
+<a href="https://twitter.com/search?q=%23FreeTheSmarties&src=typed_query"><h6 class="freethesmartie"> #FreeTheSmarties </h6></a>
+
+
+  <style>
+.social-media-footer {
+    text-align: center;
+    font-size: 1.6em;
+}
+    </style>
+
+{%  endblock %}

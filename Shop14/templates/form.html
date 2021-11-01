@@ -1,0 +1,13 @@
+{% extends 'test.html' %}
+
+{%  block title %}
+    ProductForms
+{% endblock %}
+
+{% block content %}
+    <form action="/myform/" method="post" enctype="multipart/form-data">
+    {%  csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit">
+    </form>
+{% endblock %}

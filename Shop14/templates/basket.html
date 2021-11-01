@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+
+<head xmlns="http://www.w3.org/1999/html">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <title>Basket</title>
+</head>
+<body>	
+    <div class="navContainer">
+        <div class="navContent">
+          <div class="logoContainer">
+              <a class="logo" >SimmosSmarties</a>
+          </div>
+        </div>
+    </div>
+    {% block content %}
+    {% for i in items %}
+            <img src="{{ i.product.image.url }}" alt="{{ i.product_id.name }}" style="width:100%">
+            <h4><b>{{ i.product.name }}</b></h4>
+            <h4><b>quantity: {{ i.quantity }}</b></h4>
+            <p>{{ i.product.description }}</p>
+            <a href="/removebasketitem/{{ i.id }}" class="btn btn-primary">remove from basket</a>
+    {% endfor %}<br><br>
+        <a href="/checkout">
+            <button type="submit">Checkout</button>
+        </a>
+        <style>
+        body {
+            background-color: darkslategrey;
+            color: azure;
+            font-size: 1.1em;
+        }
+
+        </style>
+{% endblock %}
